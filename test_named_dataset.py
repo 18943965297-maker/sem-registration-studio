@@ -75,7 +75,9 @@ class NamedDatasetTests(unittest.TestCase):
 
     def test_named_labels_and_portable_row_roundtrip(self):
         with tempfile.TemporaryDirectory() as d:
-            p=Path(d)
+            # Windows runners may return a DOS short-name temporary path;
+            # resolve_row intentionally expands it to the canonical path.
+            p=Path(d).resolve()
             row={'before':str(p/'image.png'),'annotation_dir':str(p),'label_prefix':'CO2-30MPa_第2组_500倍'}
             self.assertEqual(resolve_row(portable_row(row,p),p),row)
             x=AnnotationLayers((12,12),p,filename_prefix=row['label_prefix'])
