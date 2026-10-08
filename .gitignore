@@ -1,0 +1,30 @@
+# Publish source and documentation only. All data, images and weights stay local.
+*
+!*/
+!*.py
+!*.md
+!requirements*.txt
+!*.bat
+!.gitignore
+!.gitattributes
+!.github/workflows/*.yml
+
+# Even source-like files in generated folders must never be included.
+.git/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.optional_deps/
+workspace/
+data/
+datasets/
+models/
+weights/
+outputs/
+registration_runs/
+sam_context_experiment/
+downloads/
+tools/
+dist/
+build/
