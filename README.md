@@ -8,6 +8,11 @@
 
 ## 功能
 
+需要同时对照 Aedge 与 AP-SAM 派生候选时，可使用配套的
+[SEM Pore Annotation Toolkit 统一入口](https://github.com/18943965297-maker/sem-pore-annotation-toolkit/blob/main/docs/INTEGRATED_WORKFLOW.md)。
+它复用本项目配准核心，将原图坐标下的候选标签同步变换到共同网格，
+经人工检查后进入局部融合与纠错。两项目各自保留独立入口和文档。
+
 | 环节 | 实现 |
 |---|---|
 | 图像配准 | SEM 元数据读取、物理像素尺度统一、SIFT/ORB、RANSAC 局部仿射、ECC 精修 |
